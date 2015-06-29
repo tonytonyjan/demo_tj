@@ -13,3 +13,14 @@
  *= require_tree .
  *= require_self
  */
+
+/* app/assets/stylesheets/application.css */
+
+li.active > a {
+  font-size: 200%;
+  color: red;
+}
+
+ul > li { 
+  display: inline;
+}

@@ -1,9 +1,25 @@
+
 <ul>
-  <li><a href="/">home page</a></li>
-  <li><a href="/about">about me</a></li>
-  <li><a href="/math">lottory</a></li>
+  <%= nav_li 'home page', root_path %>
+  <%= nav_li 'about me', about_path %>
+  <%= nav_li 'lottory', math_path %>
+  <%= nav_li 'form', form_path %>
 </ul>
 
 <% line_number.times do %>
   <hr>
 <% end %>
+
+<!--
+<ul>
+  <li><%#= link_to 'page', root_path %></li>
+  <li><%#= link_to 'about me', about_path %></li>
+  <li><%#= link_to 'lottory', math_path %></li>
+</ul>
+
+<ul>
+  <li><a href="/">home page</a></li>
+  <li><a href="/about">about me</a></li>
+  <li><a href="/math">lottory</a></li>
+</ul>
+-->

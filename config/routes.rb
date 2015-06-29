@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
 
   root 'pages#home'
-  get 'home', 'about', 'math', controller: 'pages'
+  get :home, :math, :form, controller: :pages
+  post :about, controller: :pages
   #get 'pages/home'
   #get 'pages/about'
 
