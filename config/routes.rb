@@ -1,8 +1,18 @@
 Rails.application.routes.draw do
 
+  get 'posts/index'
+
+  get 'posts/show'
+
+  get 'posts/new'
+
+  get 'posts/edit'
+
   root 'pages#home'
   get :home, :math, :form, controller: :pages
   post :about, controller: :pages
+
+  resources :posts
   #get 'pages/home'
   #get 'pages/about'
 

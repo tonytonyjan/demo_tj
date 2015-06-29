@@ -1,0 +1,6 @@
+<h1>new a post</h1>
+<%= form_tag posts_path do %>
+  <%= text_field_tag :title %>
+  <%= text_area_tag :content %>
+  <input type='submit'>
+<% end %>
