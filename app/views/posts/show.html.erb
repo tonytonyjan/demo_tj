@@ -5,18 +5,19 @@ by
 <%= @post.user.try(:name) %>
 
 <p>
-  Tags:
+  標籤:
   <ul>
     <% @post.tags.each do |tag| %>
-      <li><%= tag.name %></li>
+      <li><%#= tag.name %></li>
+      <%= link_to tag.name, %>
     <% end %>
   </ul>
 </p>
 
 <hr/>
 
-<%= link_to 'new a tag', new_post_tag_path(@post) %>
-<%= link_to 'edit', edit_post_path(@post) %>
-<%= link_to 'delete', @post, method: :delete %>
-<%= link_to 'back', posts_path %>
+<%= link_to '新增標籤', new_post_tag_path(@post) %>
+<%= link_to '編輯', edit_post_path(@post) %>
+<%= link_to '刪除', @post, method: :delete %>
+<%= link_to '上一頁', posts_path %>
 
