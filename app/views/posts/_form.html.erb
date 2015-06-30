@@ -1,5 +1,12 @@
 <%= form_for @post do |f| %>
-  <%= f.text_field :title %>
-  <%= f.text_area :content %>
+  <%= f.label :title, "Title: " %><br>
+  <%= f.text_field :title %><br>
+  <%= f.label :content, "Content: " %><br>
+  <%= f.text_area :content %><br>
+  <%= f.label :tag_ids, "Tags: " %><br>
+  <%= f.collection_check_boxes(:tag_ids, Tag.all, :id, :name) %><br>
+
+  <%#= f.label :new_tag, "New Tag: " %><br>
+  <%#= f.text_field :new_tag %><br>
   <%= f.submit %>
 <% end %>

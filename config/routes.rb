@@ -9,10 +9,15 @@ Rails.application.routes.draw do
   get 'posts/edit'
 
   root 'pages#home'
+
   get :home, :math, :form, controller: :pages
+
   post :about, controller: :pages
 
-  resources :posts
+  resources :posts do
+    resources :tags, :controller => :post_tags
+  end
+  
   #get 'pages/home'
   #get 'pages/about'
 
