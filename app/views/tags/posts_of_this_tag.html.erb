@@ -8,4 +8,8 @@
   <% end %>
 </ol>
 
-<%= link_to 'back', tags_path %>
+<hr>
+
+<%= link_to '編輯標籤', edit_tag_path(@tag) %>
+<%= link_to '刪除標籤', tag_path(@tag), :method => :delete, :data => { :confirm => "你確定嗎?" } %>
+<%= link_to '上一頁', tags_path %>
