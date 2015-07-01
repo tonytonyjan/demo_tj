@@ -40,9 +40,7 @@ class TagsController < ApplicationController
   # delete relationship is not yet
   # 2015.7.1
   def destroy
-    #relevant_posts = @tag.posts
-    #post_tag_ships = PostTagship.where(:post_id => relevant_posts)
-    #post_tag_ships.destroy
+    PostTagship.where(:tag_id => @tag).delete_all
     @tag.destroy
     redirect_to tags_path
   end
