@@ -1,6 +1,6 @@
 <h1>文章列表</h1>
 <ol>
-  <% @posts.each do |p| %>
-    <li><%= link_to p.title, p%>
+  <% @posts.each do |post| %>
+    <li><%= link_to post.title, post%>
   <% end %>
 </ol>

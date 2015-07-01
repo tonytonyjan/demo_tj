@@ -27,6 +27,12 @@ class PostTagsController < ApplicationController
   def update
   end
 
+  def posts_of_this_tag
+    @tag = Tag.find(params[:format])
+    @posts = @tag.posts
+    render :tagposts
+  end
+
   protected
 
   def find_post
@@ -36,4 +42,5 @@ class PostTagsController < ApplicationController
   def tag_params
     params.require(:tag).permit(:name)
   end
+
 end

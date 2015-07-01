@@ -8,8 +8,8 @@ by
   標籤:
   <ul>
     <% @post.tags.each do |tag| %>
-      <li><%#= tag.name %></li>
-      <%= link_to tag.name, %>
+      <%#= link_to tag.name, tagposts_path(tag), :tag => tag %>
+      <%= link_to tag.name, tag_posts_path(tag) %>
     <% end %>
   </ul>
 </p>

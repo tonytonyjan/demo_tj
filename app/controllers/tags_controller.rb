@@ -1,9 +1,11 @@
 class TagsController < ApplicationController
 
   def index
+    @tags = Tag.all
   end
 
   def show
+    @tag = Tag.find(params[:id])
   end
 
   def new
@@ -13,7 +15,7 @@ class TagsController < ApplicationController
   def create
     @tag = Tag.new tag_params
     if @tag.save
-      redirect_to @tag
+      redirect_to tags_path
     else
       render :new
     end
@@ -26,6 +28,12 @@ class TagsController < ApplicationController
   end
 
   def destroy
+  end
+
+  def posts_of_this_tag
+    @tag = Tag.find(params[:tag_id])
+    @posts = @tag.posts
+    render :posts_of_this_tag
   end
 
   protected

@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
   get 'posts/edit'
 
+  #get 'tagposts', to: "post_tags#posts_of_this_tag"
+
   root 'pages#home'
 
   get :home, :math, :form, controller: :pages
@@ -16,6 +18,10 @@ Rails.application.routes.draw do
 
   resources :posts do
     resources :tags, :controller => :post_tags
+  end
+
+  resources :tags do
+    get 'posts', to: "tags#posts_of_this_tag"
   end
   
   #get 'pages/home'

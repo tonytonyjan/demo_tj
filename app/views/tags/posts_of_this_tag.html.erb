@@ -1,0 +1,9 @@
+<h1>有此標籤的文章</h1>
+<strong>標籤: </strong><%= @tag.name %><br/>
+
+<strong>文章: </strong>
+<ol>
+  <%= @tag.posts.each do |post| %>
+    <li><%= link_to post.title, post %></li>
+  <% end %>
+</ol>
