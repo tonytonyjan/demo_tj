@@ -1,6 +1,6 @@
 <h1>標籤列表</h1>
 <ol>
-  <%= @tags.each do |tag| %>
+  <% @tags.each do |tag| %>
     <li><%= link_to tag.name, tag_posts_path(tag) %></li>
   <% end %>
 </ol>

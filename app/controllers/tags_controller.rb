@@ -15,8 +15,10 @@ class TagsController < ApplicationController
   def create
     @tag = Tag.new tag_params
     if @tag.save
+      flash[:notice] = "新增標籤成功"
       redirect_to tags_path
     else
+      flash[:alert] = "新增標籤失敗"
       render :new
     end
   end

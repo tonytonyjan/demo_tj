@@ -17,8 +17,10 @@ class PostsController < ApplicationController
     #@post = Post.new title: params[:title], content: params[:content]
     @post = Post.new post_params
     if @post.save
+      flash[:notice] = "新增文章成功"
       redirect_to @post
     else
+      flash[:alert] = "新增文章失敗"
       render :new
     end
   end
@@ -28,8 +30,10 @@ class PostsController < ApplicationController
 
   def update
     if @post.update post_params
+      flash[:notice] = "編輯文章成功"
       redirect_to @post
     else
+      flash[:alert] = "編輯文章失敗"
       render :edit
     end
   end

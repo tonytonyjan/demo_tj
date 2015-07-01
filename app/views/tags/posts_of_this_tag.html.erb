@@ -3,7 +3,9 @@
 
 <strong>文章: </strong>
 <ol>
-  <%= @tag.posts.each do |post| %>
+  <% @tag.posts.each do |post| %>
     <li><%= link_to post.title, post %></li>
   <% end %>
 </ol>
+
+<%= link_to 'back', tags_path %>

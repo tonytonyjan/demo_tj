@@ -13,10 +13,12 @@ class PostTagsController < ApplicationController
   end
 
   def create
-    @tag = @post.tags.new tag_params
+    @tag = @post.tags.create tag_params
     if @tag.save
+      flash[:notice] = "新增標籤成功 #{@tag.name}"
       redirect_to @post
     else
+      flash[:alert] = "新增標籤失敗"
       render :new
     end
   end
@@ -27,11 +29,11 @@ class PostTagsController < ApplicationController
   def update
   end
 
-  def posts_of_this_tag
-    @tag = Tag.find(params[:format])
-    @posts = @tag.posts
-    render :tagposts
-  end
+  #def posts_of_this_tag
+  #  @tag = Tag.find(params[:format])
+  #  @posts = @tag.posts
+  #  render :tagposts
+  #end
 
   protected
 
