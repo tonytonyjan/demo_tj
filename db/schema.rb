@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150630134130) do
+ActiveRecord::Schema.define(version: 20150703002308) do
 
   create_table "ideas", force: :cascade do |t|
     t.string   "name"
@@ -47,8 +47,9 @@ ActiveRecord::Schema.define(version: 20150630134130) do
     t.string   "name"
     t.string   "email"
     t.text     "about"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.string   "password_digest"
   end
 
 end

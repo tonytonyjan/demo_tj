@@ -23,6 +23,9 @@ Rails.application.routes.draw do
   resources :tags do
     get 'posts', to: "tags#posts_of_this_tag"
   end
+
+  resource :session, :only => [ :create, :destroy ]
+
   
   #get 'pages/home'
   #get 'pages/about'

@@ -39,8 +39,11 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @post.destroy
-    redirect_to posts_path
+    PostTagship.where(:post_id => @post).delete_all
+    if @post.destroy
+      flash[:notice] = "刪除文章成功"
+      redirect_to posts_path
+    end
   end
 
   protected
@@ -50,7 +53,7 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:title, :content, :tag_ids => [])
+    params.require(:post).permit(:title, :content, :user_id, :tag_ids => [])
   end
   
 end

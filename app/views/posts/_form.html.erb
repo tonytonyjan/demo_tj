@@ -3,12 +3,10 @@
   <%= f.text_field :title %><br>
   <%= f.label :content, "內容: " %><br>
   <%= f.text_area :content %><br>
+  <%= f.label :user_id, "名字: " %><br>
+  <%= f.collection_select :user_id, User.all, :id, :name %><br>
   <%= f.label :tag_ids, "標籤: " %><br>
   <%= f.collection_check_boxes(:tag_ids, Tag.all, :id, :name) %><br>
 
-  <%#= f.label :new_tag, "New Tag: " %><br>
-  <%#= f.text_field :new_tag %><br>
   <%= f.submit "送出" %>
 <% end %>
-
-<%#= link_to '新增標籤', new_post_tag_path(@post) %>

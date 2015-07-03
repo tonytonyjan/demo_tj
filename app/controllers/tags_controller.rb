@@ -37,11 +37,10 @@ class TagsController < ApplicationController
     end
   end
 
-  # delete relationship is not yet
-  # 2015.7.1
   def destroy
     PostTagship.where(:tag_id => @tag).delete_all
     @tag.destroy
+    flash[:notice] = "刪除標籤成功"
     redirect_to tags_path
   end
 
@@ -49,6 +48,10 @@ class TagsController < ApplicationController
     @tag = Tag.find(params[:tag_id])
     @posts = @tag.posts
     render :posts_of_this_tag
+  end
+
+  def hot_tag
+
   end
 
   protected
